@@ -7,8 +7,12 @@
 }
 
 :root {
-  --background: #000000;
-  --foreground: #f4f4f5;
+  --background: #09090b; /* zinc-950 */
+  --foreground: #f4f4f5; /* zinc-100 */
+  --card: #18181b; /* zinc-900 */
+  --border: #27272a; /* zinc-800 */
+  --accent: #3b82f6; /* blue-500 */
+  --accent-foreground: #ffffff;
 }
 
 body {
@@ -16,55 +20,13 @@ body {
   color: var(--foreground);
 }
 
-/* Cyber-Industrial Custom Background Grids */
-.blueprint-grid {
-  background-size: 32px 32px;
+/* Elegant subtle mesh gradient background */
+.dashboard-bg {
+  background-color: #09090b;
   background-image: 
-    linear-gradient(to right, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
-}
-
-/* Subtle dot overlay matrix */
-.dot-matrix {
-  background-size: 16px 16px;
-  background-image: radial-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px);
-}
-
-/* Glowing text effects */
-.text-neon-glow {
-  text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
-}
-
-.text-neon-glow-strong {
-  text-shadow: 0 0 12px rgba(34, 211, 238, 0.65), 0 0 2px rgba(34, 211, 238, 0.9);
-}
-
-/* Border glow transitions */
-.glow-border {
-  border: 1px solid rgba(6, 182, 212, 0.15);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glow-border:hover, .glow-border:focus-within {
-  border-color: rgba(6, 182, 212, 0.5);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
-}
-
-/* Cyber scanline effect for headers or consoles */
-.scanlines {
-  position: relative;
-  overflow: hidden;
-}
-
-.scanlines::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 10;
-  background-size: 100% 3px, 6px 100%;
-  pointer-events: none;
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.02) 0px, transparent 50%);
+  background-attachment: fixed;
 }
 
 /* Custom Scrollbars */
@@ -74,15 +36,45 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.9);
-  border-left: 1px solid rgba(255, 255, 255, 0.03);
+  background: #09090b;
+  border-left: 1px solid #18181b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(6, 182, 212, 0.2);
-  border-radius: 3px;
+  background: #27272a;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.45);
+  background: #3f3f46;
+}
+
+/* Card hover scaling & shadow styling */
+.premium-card {
+  background-color: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(39, 39, 42, 0.8);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  border-color: rgba(63, 63, 70, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* Clean, modern active tabs */
+.tab-active {
+  color: #3b82f6;
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.tab-inactive {
+  color: #71717a;
+  border-color: transparent;
+}
+
+.tab-inactive:hover {
+  color: #a1a1aa;
+  background-color: rgba(255, 255, 255, 0.02);
 }
