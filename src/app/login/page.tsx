@@ -131,7 +131,7 @@ export default function LoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••••••••"
-                    className="w-full bg-black/60 border border-zinc-800 focus:border-cyan-500/70 focus:ring-1 focus:ring-cyan-500/20 rounded-lg px-4 py-3 text-white font-mono text-sm tracking-widest placeholder:text-zinc-800 focus:outline-none transition-all"
+                    className="w-full bg-black/60 border border-zinc-800 focus:border-cyan-500/70 focus:ring-1 focus:ring-cyan-500/20 rounded-lg px-4 py-3 text-white font-mono text-base md:text-sm tracking-widest placeholder:text-zinc-800 focus:outline-none transition-all"
                     required
                     disabled={loading}
                     autoFocus

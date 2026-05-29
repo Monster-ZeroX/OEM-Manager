@@ -301,7 +301,7 @@ export default function DashboardPage() {
               placeholder="Search by part number, name, or vehicle compatibility..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg pl-9 pr-3.5 py-2.5 text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all font-mono"
+              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg pl-9 pr-3.5 py-2.5 text-base md:text-xs text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all font-mono"
             />
             <div className="absolute left-3 top-3.5 text-zinc-600 pointer-events-none">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -315,7 +315,7 @@ export default function DashboardPage() {
             <select
               value={selectedModel}
               onChange={(e) => { setSelectedModel(e.target.value); setPage(1); }}
-              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3.5 py-2.5 text-xs text-zinc-300 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all cursor-pointer font-sans"
+              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3.5 py-2.5 text-base md:text-xs text-zinc-300 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all cursor-pointer font-sans"
             >
               <option value="">All Vehicles / Models</option>
               {models.map((m) => (
@@ -331,7 +331,7 @@ export default function DashboardPage() {
             <select
               value={selectedCategory}
               onChange={(e) => { setSelectedCategory(e.target.value); setPage(1); }}
-              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3.5 py-2.5 text-xs text-zinc-300 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all cursor-pointer font-sans"
+              className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3.5 py-2.5 text-base md:text-xs text-zinc-300 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-all cursor-pointer font-sans"
             >
               <option value="">All Categories</option>
               {categories.map((cat) => (
@@ -518,7 +518,7 @@ export default function DashboardPage() {
                           placeholder="e.g. axio161"
                           value={newPart.new_model_id}
                           onChange={(e) => setNewPart(prev => ({ ...prev, new_model_id: e.target.value }))}
-                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all font-mono"
+                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all font-mono"
                           required
                         />
                       </div>
@@ -530,7 +530,7 @@ export default function DashboardPage() {
                           placeholder="e.g. Toyota Axio NKE165"
                           value={newPart.new_model_name}
                           onChange={(e) => setNewPart(prev => ({ ...prev, new_model_name: e.target.value }))}
-                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
+                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
                           required
                         />
                       </div>
@@ -544,7 +544,7 @@ export default function DashboardPage() {
                           placeholder="e.g. 2016"
                           value={newPart.new_model_year}
                           onChange={(e) => setNewPart(prev => ({ ...prev, new_model_year: e.target.value }))}
-                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all font-mono"
+                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all font-mono"
                         />
                       </div>
 
@@ -555,7 +555,7 @@ export default function DashboardPage() {
                           placeholder="e.g. 🇯🇵"
                           value={newPart.new_model_flag}
                           onChange={(e) => setNewPart(prev => ({ ...prev, new_model_flag: e.target.value }))}
-                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
+                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
                         />
                       </div>
 
@@ -564,7 +564,7 @@ export default function DashboardPage() {
                         <select
                           value={newPart.new_model_type}
                           onChange={(e) => setNewPart(prev => ({ ...prev, new_model_type: e.target.value }))}
-                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-zinc-400 focus:outline-none transition-all"
+                          className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-zinc-400 focus:outline-none transition-all"
                         >
                           <option value="Japan">Japan</option>
                           <option value="Indian">Indian</option>
@@ -581,7 +581,7 @@ export default function DashboardPage() {
                     <select
                       value={newPart.model_id}
                       onChange={(e) => setNewPart(prev => ({ ...prev, model_id: e.target.value }))}
-                      className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2.5 text-xs text-zinc-400 focus:outline-none transition-all cursor-pointer"
+                      className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2.5 text-base md:text-xs text-zinc-400 focus:outline-none transition-all cursor-pointer"
                       required
                     >
                       {models.map((m) => (
@@ -604,7 +604,7 @@ export default function DashboardPage() {
                       placeholder="e.g. 13780-68L00"
                       value={newPart.part_number}
                       onChange={(e) => setNewPart(prev => ({ ...prev, part_number: e.target.value }))}
-                      className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all font-mono"
+                      className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all font-mono"
                       required
                     />
                   </div>
@@ -618,7 +618,7 @@ export default function DashboardPage() {
                       placeholder="e.g. Engine, Brakes, Cooling..."
                       value={newPart.category}
                       onChange={(e) => setNewPart(prev => ({ ...prev, category: e.target.value }))}
-                      className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
+                      className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
                       required
                       list="categories-list"
                     />
@@ -637,7 +637,7 @@ export default function DashboardPage() {
                     placeholder="e.g. Spark plugs NGK BKR5E / Air Filter"
                     value={newPart.name}
                     onChange={(e) => setNewPart(prev => ({ ...prev, name: e.target.value }))}
-                    className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
+                    className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
                     required
                   />
                 </div>

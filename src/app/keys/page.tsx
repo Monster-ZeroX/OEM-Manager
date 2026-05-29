@@ -142,7 +142,7 @@ export default function ApiKeysPage() {
                   placeholder="e.g. Alto Inventory Script, Claude Agent Sync..."
                   value={newKeyName}
                   onChange={(e) => setNewKeyName(e.target.value)}
-                  className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
+                  className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-white placeholder:text-zinc-700 focus:outline-none transition-all"
                   required
                 />
               </div>
@@ -154,7 +154,7 @@ export default function ApiKeysPage() {
                 <select
                   value={newKeyExpiry}
                   onChange={(e) => setNewKeyExpiry(e.target.value)}
-                  className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-xs text-zinc-400 focus:outline-none transition-all cursor-pointer"
+                  className="w-full bg-zinc-950 border border-zinc-800 focus:border-blue-500/50 rounded-lg px-3 py-2 text-base md:text-xs text-zinc-400 focus:outline-none transition-all cursor-pointer"
                 >
                   <option value="30">30 Days</option>
                   <option value="90">90 Days</option>
