@@ -6,9 +6,9 @@ import DashboardLayout from '@/components/DashboardLayout';
 export default function AiPromptPage() {
   const [copied, setCopied] = useState(false);
 
-  const systemPrompt = `You are a professional automotive database compiler. I will provide you with a raw list of car models, categories, and OEM part numbers. 
+  const systemPrompt = `You are a professional automotive database compiler and research assistant. I will provide you with a list of car names/models. 
 
-Please convert the raw list into a single, valid JSON object matching our structured database layout exactly.
+Using your automotive knowledge base, compile the standard OEM part numbers and descriptions (for categories like Engine, Brakes, Suspension, etc.) for each of these cars, and output them in a single, valid JSON object matching our structured database layout exactly.
 
 ### Target JSON Schema Format:
 \`\`\`json
@@ -38,11 +38,11 @@ Please convert the raw list into a single, valid JSON object matching our struct
 
 ### Data Conversion Rules:
 1. **Model Slug IDs**: The "id" field MUST be lowercase, contain only letters, numbers, and hyphens. Replace spaces or special characters with hyphens.
-2. **Category Names**: Standardize categories. If a raw item category is "Air Filter" or "Spark Plugs", map it to "Engine". If it is "Front shock" or "Bushes", map to "Suspension".
+2. **Category Names**: Standardize categories. Map all parts to one of these: "Engine", "Brakes", "Suspension", "Body", "Electrical", "Steering", "Cooling", "Transmission", or "Miscellaneous".
 3. **Region Keys**: Standardize the top-level keys to match the region group, lowercase (e.g. "japan", "indian").
 4. **Valid JSON**: Ensure all double quotes, brackets, and colons are properly closed. Output ONLY the raw JSON content so that I can copy-paste it directly into my JSON import panel.
 
-Here is the raw car parts data to parse:
+Here is the list of car models/names to generate parts catalog data for:
 `;
 
   const handleCopy = () => {
@@ -81,13 +81,13 @@ Here is the raw car parts data to parse:
             <div className="relative">
               <textarea
                 readOnly
-                value={systemPrompt + "[PASTE RAW DATA DETAILS HERE]"}
+                value={systemPrompt + "[PASTE VEHICLE NAMES HERE (e.g. Suzuki Alto, Toyota Prius 30, Toyota Axio 165)]"}
                 className="w-full h-[360px] bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-[11px] font-mono text-zinc-400 select-all focus:outline-none resize-none leading-relaxed"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 to-transparent h-12 pointer-events-none rounded-b-xl" />
             </div>
             <p className="text-[11px] text-zinc-500 leading-normal">
-              💡 **How to use**: Click "Copy Prompt", open Claude or ChatGPT, paste the prompt, and append your raw vehicle data at the bottom. Save the resulting output as a `.json` file and upload it in the Parts Inventory importer.
+              💡 **How to use**: Click "Copy Prompt", open Claude or ChatGPT, paste the prompt, and append the names of the cars you want to generate parts database lists for at the bottom. Save the resulting output as a `.json` file and upload it in the Parts Inventory importer.
             </p>
           </div>
 
