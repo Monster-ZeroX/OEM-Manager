@@ -20,14 +20,40 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OEM Manager | Technical Database",
+  title: "OEM Part Manager | Internal Technical Database",
   description: "High-performance internal OEM parts catalog, JSON importer, and secure API control center.",
+  applicationName: "OEM Part Manager",
+  authors: [{ name: "Monster-ZeroX" }],
+  generator: "Next.js",
+  keywords: ["OEM", "Part Manager", "Automotive Parts", "Technical Database"],
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-32x32.png",
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title: "OEM Part Manager | Internal Technical Database",
+    description: "High-performance internal OEM parts catalog, JSON importer, and secure API control center.",
+    type: "website",
+    locale: "en_US",
+    siteName: "OEM Part Manager",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OEM Part Manager | Internal Technical Database",
+    description: "High-performance internal OEM parts catalog, JSON importer, and secure API control center.",
+  },
+};
+
+export const viewport = {
+  themeColor: "#09090b",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
